@@ -1,0 +1,198 @@
+:root {
+    --general-text: #312C27;
+    --accent-text: #1F1711;
+    --general-bg: #FFF9F4;
+    --accent-bg: #FFE0CB;
+    --accent-color: #FFA55C;
+    --accent-color-2: #CEAAD0;
+    --input-color: #AC907A;
+    --transition: all .4s;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+.body {
+    font-family: "Montserrat", "Arial", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--general-text);
+    background: var(--general-bg);
+}
+
+.body--burger-opened {
+    overflow: hidden;
+}
+
+.body--modal-opened .modal{
+    overflow: hidden;
+    opacity: 1;
+    visibility: visible;
+}
+
+.wrapper {
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex-grow: 1;
+}
+
+.main__about {
+    padding: 140px 0;
+}
+
+.main__program,
+.main__gallery,
+.main__testimonials {
+    padding: 0 0 140px;
+    
+}
+
+.container {
+    max-width: 1310px;
+    margin: 0 auto;
+    padding: 0 15px;
+    height: 100%;
+}
+
+.title {
+    color: var(--accent-text);
+    font-family: Gabriola;
+    font-size: 74px;
+    line-height: 0.82;
+}
+
+.button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    height: 62px;
+    border-radius: 60px;
+    background: var(--accent-color);
+    padding: 5px 15px;
+    transition: var(--transition);
+}
+
+.button:hover {
+    background: #FF9138;
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    z-index: 13;
+    background: #00000070;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all .6s;
+}
+
+.modal__window {
+    max-width: 428px;
+    background: var(--general-bg);
+    border-radius: 20px;
+    position: relative;
+    padding: 0 60px 60px;
+}
+
+.modal__cancel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.modal__cancel:hover rect,
+.modal__cancel:hover path {
+    transition: var(--transition);
+}
+
+.modal__cancel:hover rect,
+.modal__cancel:hover path {
+    stroke: var(--input-color);
+}
+
+.modal__img {
+    margin: -65px 0 15px 12px;
+    max-width: 100%;
+}
+
+.modal__title {
+    font-family: Gabriola;
+    font-size: 42px;
+    line-height: .9;
+    margin-bottom: 10px;
+}
+
+.modal__text {
+    margin-bottom: 30px;
+}
+
+.modal__form-label,
+.contact__form-label {
+    display: block;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.label span {
+    position: absolute;
+    top: 12px;
+    left: 28px;
+    font-family: Montserrat;
+    font-size: 11px;
+    color: var(--input-color);
+
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.label__input {
+    width: 100%;
+    border-radius: 100px;
+    border: 1px solid var(--input-color);
+    background: #00000000;
+    padding: 19px 28px;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.label__input:hover{
+    border: 1px solid var(--accent-color);
+}
+
+.label__input:focus {
+    padding: 26px 28px 12px;
+}
+
+.label__input:focus + span {
+    opacity: 1;
+    visibility: visible;
+}
+
+.label__input::placeholder {
+    color: var(--input-color);
+    transition: var(--transition);
+}
+
+.label__input:hover::placeholder {
+    color: var(--accent-color);
+}
